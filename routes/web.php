@@ -18,5 +18,6 @@ Route::post("/register-driver", "HomeController@registerDriverSubmit")->name("dr
 Route::get("/contact", "HomeController@contact")->name("contact");
 Route::post("/contact", "HomeController@sendFeedback")->name("contact.submit");
 Route::get("dep",function(){
+    Artisan::call("migrate");
     Artisan::call("storage:link");
 });
